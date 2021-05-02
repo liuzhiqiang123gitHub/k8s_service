@@ -1,0 +1,16 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+name: hello-k8s
+spec:
+replicas: 3
+template:
+  metadata:
+    labels:
+      app: hello-k8s
+  spec:
+    containers:
+      - name: k8s
+        image: liuqiangdocker/qiangk8s:v1.0
+        ports:
+          - containerPort: 8888
